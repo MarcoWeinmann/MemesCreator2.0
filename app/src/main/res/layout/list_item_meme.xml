@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:backgroundTint="@color/SI_Grey"
+    android:elevation="5dp"
+    app:cardCornerRadius="10dp"
+    app:contentPadding="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/ivMeme"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toTopOf="@+id/llInput"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llInput"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="8dp"
+            app:layout_constraintBottom_toTopOf="@id/tvSwipe"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <Button
+                android:id="@+id/btnDelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:layout_marginStart="8dp"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_gravity="center"
+                android:text="&#10060;"
+                android:layout_weight="0"/>
+
+            <EditText
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:layout_gravity="center"
+                android:textAlignment="center"
+                android:fontFamily="@font/bubblegum_sans"
+                android:textColor="@color/SI_DeepPurple"
+                android:textSize="24sp"
+                android:layout_weight="1"/>
+
+            <Button
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
+                android:minWidth="0dp"
+                android:minHeight="0dp"
+                android:layout_gravity="center"
+                android:text="&#128190;"
+                android:layout_weight="0"/>
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tvSwipe"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:alpha="0.5"
+            android:fontFamily="@font/bubblegum_sans"
+            android:text="@string/swipe_left_or_right"
+            android:textAlignment="center"
+            android:textColor="@color/SI_DeepPurple"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</com.google.android.material.card.MaterialCardView>
