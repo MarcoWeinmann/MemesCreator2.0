@@ -17,7 +17,9 @@ import de.syntax_institut.funappsvorlage.data.datamodels.Meme
  * Diese Klasse organisiert mithilfe der ViewHolder Klasse das Recycling
  */
 class MemeAdapter(
-    private val dataset: List<Meme>
+    private val dataset: List<Meme>,
+    private val deleteMeme: (Meme)-> Unit,
+    private val updateMeme: (Meme)-> Unit
 ) : RecyclerView.Adapter<MemeAdapter.ItemViewHolder>() {
 
     /**
@@ -64,7 +66,13 @@ class MemeAdapter(
         // der den aktuellen Titel in das meme Objekt speichert
         holder.btnSave.setOnClickListener {
             meme.name = holder.tvTitle.text.toString()
+            updateMeme(meme)
         }
+
+        holder.btnDelete.setOnClickListener{
+          deleteMeme(meme)
+        }
+
     }
 
     /**
